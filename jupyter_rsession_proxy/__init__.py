@@ -67,7 +67,7 @@ def setup_rstudio():
             "--standalone=1",
             "--program-mode=server",
             "--log-stderr=1",
-            "--session-timeout-minutes=0",
+            "--session-timeout-minutes=5",
             "--user-identity=" + getpass.getuser(),
             "--www-port=" + str(port),
         ]
