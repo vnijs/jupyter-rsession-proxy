@@ -34,6 +34,7 @@ def setup_shiny():
 
     return {
         "command": _get_shiny_cmd,
+        "timeout": 20,
         "launcher_entry": {
             "title": "Shiny",
             "icon_path": os.path.join(
@@ -66,6 +67,7 @@ def setup_rstudio():
 
     return {
         "command": _get_rserver_cmd,
+        "timeout": 20,
         "environment": {"USER": getpass.getuser()},
         "launcher_entry": {
             "title": "RStudio",
