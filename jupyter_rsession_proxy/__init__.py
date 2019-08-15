@@ -63,7 +63,14 @@ def setup_rstudio():
             else:
                 raise FileNotFoundError("Can not find rserver in PATH")
 
-        return [executable, "--www-port=" + str(port)]
+        return [
+            executable,
+            "--standalone=1",
+            "--program-mode=server",
+            "--log-stderr=1",
+            "--session-timeout-minutes=0",
+            "--www-port=" + str(port),
+        ]
 
     return {
         "command": _get_rserver_cmd,
