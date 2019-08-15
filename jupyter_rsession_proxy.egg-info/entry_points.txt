@@ -1,0 +1,4 @@
+[jupyter_serverproxy_servers]
+rstudio = jupyter_rsession_proxy:setup_rstudio
+shiny = jupyter_rsession_proxy:setup_shiny
+
