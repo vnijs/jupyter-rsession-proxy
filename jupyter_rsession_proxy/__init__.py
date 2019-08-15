@@ -34,7 +34,7 @@ def setup_shiny():
 
     return {
         "command": _get_shiny_cmd,
-        "timeout": 20,
+        "timeout": 30,
         "launcher_entry": {
             "title": "Shiny",
             "icon_path": os.path.join(
@@ -63,11 +63,11 @@ def setup_rstudio():
             else:
                 raise FileNotFoundError("Can not find rserver in PATH")
 
-        return [executable, "--session-timeout-minutes=0", "--www-port=" + str(port)]
+        return [executable, "--www-port=" + str(port)]
 
     return {
         "command": _get_rserver_cmd,
-        "timeout": 20,
+        "timeout": 30,
         "environment": {"USER": getpass.getuser()},
         "launcher_entry": {
             "title": "RStudio",
