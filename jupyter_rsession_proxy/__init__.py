@@ -9,12 +9,13 @@ from textwrap import dedent
 def setup_shiny():
     """Manage a Shiny instance."""
 
-    name = "shiny"
-
     def _get_shiny_cmd(port):
         conf = dedent(
             """
             run_as {user};
+            # make debugging easier
+            sanitize_errors false;
+            preserve_logs true
             server {{
                 listen {port};
                 location / {{
